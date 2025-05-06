@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Jingling Zhang's Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <h1>Jingling Zhang's Blog - Admin</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Admin Dashboard</h2>
+                <p>Create and manage your blog posts</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container" style="grid-template-columns: 1fr;">
+        <section>
+            <article class="post">
+                <h2>Create New Post</h2>
+                
+                <form id="post-form">
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="image">Featured Image URL:</label>
+                        <input type="text" id="image" name="image" placeholder="https://example.com/image.jpg">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tags">Tags (comma separated):</label>
+                        <input type="text" id="tags" name="tags" placeholder="Technology, Coding, Web Development">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="content">Content:</label>
+                        <textarea id="content" name="content" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn">Create Post</button>
+                        <button type="button" id="preview-btn" class="btn btn-secondary">Preview</button>
+                    </div>
+                </form>
+                
+                <div id="preview" style="margin-top: 2rem; display: none;">
+                    <h3>Preview:</h3>
+                    <div id="preview-content" class="post" style="margin-top: 1rem;"></div>
+                    <p><em>Note: This is a static demo. In a real application, this would save the post to a database.</em></p>
+                </div>
+            </article>
+            
+            <article class="post">
+                <h2>Manage Posts</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">Title</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">Date</th>
+                            <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">First Blog Post</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">May 6, 2025</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">
+                                <a href="#" class="btn btn-secondary" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">Edit</a>
+                                <a href="#" class="btn" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; background-color: var(--danger);">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">Getting Started with Web Development</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">May 5, 2025</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">
+                                <a href="#" class="btn btn-secondary" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">Edit</a>
+                                <a href="#" class="btn" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; background-color: var(--danger);">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">My Favorite Development Tools</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">May 4, 2025</td>
+                            <td style="padding: 0.5rem; border-bottom: 1px solid var(--gray-light);">
+                                <a href="#" class="btn btn-secondary" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;">Edit</a>
+                                <a href="#" class="btn" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; background-color: var(--danger);">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <p>A personal blog where I share my thoughts, ideas, and projects related to technology and life.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Coding</a></li>
+                        <li><a href="#">Productivity</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2025</span> Jingling Zhang's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
